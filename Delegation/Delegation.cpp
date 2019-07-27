@@ -11,6 +11,7 @@ int main()
 {
     std::cout << "=========================================\n";
     std::cout << "     Design Patterns - Delegation\n";
+    std::cout << "     Using Polymorphism\n";
     std::cout << "=========================================\n\n";
 
     Shape *r = new Rectangle(2, 3);
