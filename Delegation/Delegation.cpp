@@ -3,19 +3,26 @@
 
 #include "pch.h"
 #include <iostream>
+#include "Window.h"
+#include "Circle.h"
+#include "Rectangle.h"
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
-}
+    std::cout << "=========================================\n";
+    std::cout << "     Design Patterns - Delegation\n";
+    std::cout << "=========================================\n\n";
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+    Shape *r = new Rectangle(2, 3);
+    Shape *c = new Circle(5);
+    Window *w = new Window(r);
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    int ca = c->area();
+    std::cout << "Circle area: " << ca << "\n";
+    int ra = r->area();
+    std::cout << "Rectangle area: " << ra << "\n";
+
+    delete(r);
+    delete(c);
+    delete(w);
+ }
